@@ -505,17 +505,23 @@ transition: transform 250ms var(--cubiq);
 }
 .backdrop{
     position: fixed;
+    opacity: 1;
+    transition: opacity 250ms var(--cubiq);
     top: 0;
     left: 0;
     width: 100%;
     height:100%;
     background-color:  rgba(0, 0, 0, 0.2);
 }
+.backdrop.is-hidden .modal{
+    transform:translate(-50%, -50%) scale(0.7);
+}
 .modal{
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms var(--cubiq);
     min-height: 581px;
     min-width: 528px;
     background-color: var(--white-color);
