@@ -1,4 +1,5 @@
 :root{
+    --cubiq:cubic-bezier(0.4, 0, 0.2, 1);
     --haupt-color: #212121;
     --secod-color: #757575;
     --white-color: #FFFFFF;
@@ -87,6 +88,7 @@ h1,h2,h3,h4,h5,p{
 .nav-link,
 .contakt-link{
     position: relative;
+    transition: fill 250ms var(--cubiq), color 250ms var(--cubiq);
     padding-top: 32px;
     padding-bottom: 32px;
     display:inline-flex;
@@ -301,6 +303,7 @@ background: rgba(47, 48, 58, 0.8);
 }
 .icon-link,
 .toadd-link {
+    transition: background-color 250ms var(--cubiq), color 250ms var(--cubiq);
     border-radius: 50%;
     display:flex;
     align-items: center;
@@ -325,6 +328,7 @@ background: rgba(47, 48, 58, 0.8);
     justify-content: space-between; 
 }
 .company-link{
+    transition: color 250ms var(--cubiq), border-color 250ms var(--cubiq);
     border: 1px solid var(--icons-color);
     border-radius: 4px;
     display: inline-flex;
@@ -368,6 +372,7 @@ background: rgba(47, 48, 58, 0.8);
 }
 .addres-list .link{
     display: block;
+    transition: color 250ms var(--cubiq);
     font-size: 14px;
     letter-spacing: 0.03em;
     color: var(--secod-color);
@@ -393,6 +398,7 @@ background: rgba(47, 48, 58, 0.8);
 }
 .portfolio-btn{
     display: inline-block;
+    transition: background-color 250ms var(--cubiq),color 250ms var(--cubiq);
     padding: 6px 22px;
     font-weight: 500;
     font-size: 16px;
@@ -418,13 +424,16 @@ background: rgba(47, 48, 58, 0.8);
 .card-item {
     margin-right: 30px; /* width: calc((100%-60px)/3); */
     margin-top: 30px;
+    transition: box-shadow 250ms var(--cubiq);
+    
 }
 .card-item:hover,
 .card-item:focus{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.card-item:hover .thumb-text{
-    opacity: 1;
+.card-item:hover .thumb-text,
+.card-item:focus .thumb-text{
+    transform: translateY(-100%);
 }
 .card-item:nth-child(3n) {
     margin-right: 0;   /*вариант 1*/
@@ -432,15 +441,17 @@ background: rgba(47, 48, 58, 0.8);
 .card-item:nth-child(-n+3) {
     margin-top: 0;   /*вариант 1 */
 }
+
 .thumb{
     position: relative;
+    overflow: hidden;
 }
 .card-img{
     display: block;
 }
 .thumb-text{
     position: absolute;
-    top: 0;
+    transition: transform 250ms var(--cubiq);
     padding: 63px 24px; 
     font-weight: 400;
     font-size: 18px;
@@ -448,7 +459,7 @@ background: rgba(47, 48, 58, 0.8);
     letter-spacing: 0.03em;
     color: var(--white-color);
     background-color: rgba(33, 150, 243, 0.9);
-    opacity: 0;
+  
 }
 .card-list .link {
     display: block;
@@ -473,8 +484,10 @@ background: rgba(47, 48, 58, 0.8);
     letter-spacing: 0.03em;
     color: var(--secod-color);
 }
+
 /* ---------------------MODAL---------------------- */
 .backdrop.is-hidden{
+    /* visibility: hidden; */
     opacity: 0;
     pointer-events: none;
 }
@@ -498,6 +511,7 @@ background: rgba(47, 48, 58, 0.8);
     border-radius: 4px;
 }
 .modal-close{
+    transition: background-color 250ms var(--cubiq),fill 250ms var(--cubiq);
     position: absolute;
     right:8px;
     top: 8px;
@@ -512,4 +526,9 @@ background: rgba(47, 48, 58, 0.8);
     border-radius: 50%;
     background-color:  var(--white-color);
 
+}
+.modal-close:hover,
+.modal-close:focus{
+    background-color: var(--akcent-color);
+    fill:var(--white-color);
 }
