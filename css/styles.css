@@ -326,6 +326,7 @@ background: rgba(47, 48, 58, 0.8);
 .company-list{
     display: flex; 
     justify-content: space-between; 
+
 }
 .company-link{
     transition: color 250ms var(--cubiq), border-color 250ms var(--cubiq);
@@ -337,14 +338,37 @@ background: rgba(47, 48, 58, 0.8);
     width: 170px;
     height: 92px;
     color: var(--icons-color);
+    
 }
-.company-link:hover,
-.company-link:focus{
-    color: var(--akcent-color);
+/* .company-item{
+    perspective: 600px;
+} */
+.company-item:hover .company-link{
+animation: rotation 1500ms ease-in-out;
+/* transform: rotateY(360deg);
+    transition: transform 500ms linear; */
+color: var(--akcent-color);
     border-color: var(--akcent-color);
 }
 .icon-company{
     fill: currentColor;
+}
+@keyframes rotation{
+    0% {
+        transform: perspective(400px) rotateY(0deg);
+    }
+
+    25% {
+        transform: perspective(400px) rotateY(60deg);
+    }
+    50%{
+        transform: perspective(400px) rotateY(-60deg);
+    }
+    75%{
+        transform: perspective(400px) rotateY(0deg);
+    }
+   
+  
 }
 /* ==================FOOTER===================== */
 .footer{
