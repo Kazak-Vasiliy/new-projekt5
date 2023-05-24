@@ -225,8 +225,8 @@ background-color: var(--akcent-color);
 .work-item{
     position: relative;
 }
-
 .work-list .work-text{
+    display: none;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -236,6 +236,51 @@ background-color: var(--akcent-color);
   padding-top: 27px;
   padding-bottom: 27px;
 background: rgba(47, 48, 58, 0.8);
+
+}
+.work-item:hover .work-text{
+    display: block;
+    /* transition: transform 2000ms var(--cubiq);
+    transform:rotateX(360deg); */
+    animation: myAnim 2s ease-out 0s  normal forwards;
+    
+}
+@keyframes myAnim{
+    0% {
+        animation-timing-function: ease-in;
+        transform: translateY(-230px);
+    }
+    40% {
+        animation-timing-function: ease-in;
+        transform: translateY(-150px);
+    }
+
+    65% {
+        animation-timing-function: ease-in;
+        transform: translateY(-100px);
+    }
+
+    82% {
+        animation-timing-function: ease-in;
+        transform: translateY(-50px);
+    }
+
+    93% {
+        animation-timing-function: ease-in;
+        transform: translateY(-30px);
+    }
+    25%,
+    55%,
+    75%,
+    87% {
+        animation-timing-function: ease-out;
+        transform: translateY(0px);
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+        transform: translateY(0px);
+    }
 }
 .work-img{
     display: block;
@@ -344,6 +389,8 @@ background: rgba(47, 48, 58, 0.8);
     perspective: 600px;
 } */
 .company-item:hover .company-link{
+        /* transition: transform 2000ms var(--cubiq);
+            transform: rotateX(360deg); */
 animation: rotation 1500ms ease-in-out;
 /* transform: rotateY(360deg);
     transition: transform 500ms linear; */
